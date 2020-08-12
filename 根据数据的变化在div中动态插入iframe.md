@@ -38,3 +38,8 @@ this.$once('hook:beforeDestroy', () => {
             observer.disconnect();
 });
 ```
+
+- 参考：
+[MutationObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver)
+
+
