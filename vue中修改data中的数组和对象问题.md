@@ -5,6 +5,8 @@
    2. 百度发现Vue 不能检测以下变动的数组：
       - 当你利用索引直接设置一个项时，例如：vm.items[indexOfItem] = newValue
       - 当你修改数组的长度时，例如：vm.items.length = newLength
-   3. 使用官方的解决方法:vm.items.splice(indexOfItem, 1, newValue)
+   3. 
+      - 解决方法一:vm.items.splice(indexOfItem, 1, newValue)
+      - 解决方法二:this.$set(vm.items,indexOfItem,newValue)
    4. 完美解决~
 
