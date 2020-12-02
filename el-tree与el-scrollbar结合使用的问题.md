@@ -1,7 +1,5 @@
 # el-tree与el-scrollbar结合使用的问题
-- 问题：
-   1. 当el-tree的节点采用懒加载的方式进行节点的加载时，el-scrollbar的滚动条不会根据节点的变化进行更新，导致无法滚拖动滚动条进行滚动。
-   2. 横向overflow时，横向滚动条没有出现。
+- 问题：当el-tree的节点采用懒加载的方式进行节点的加载时，el-scrollbar的滚动条不会根据节点的变化进行更新，导致无法滚拖动滚动条进行滚动。
 - 解决问题的过程：
    - 问题1：
       1. 找到el-scrollbar更新的方式：使用el-scrollbar中的update方法对scrollbar进行更新。
