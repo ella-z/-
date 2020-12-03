@@ -1,5 +1,7 @@
 # el-tree与el-scrollbar结合使用的问题
-- 问题：当el-tree的节点采用懒加载的方式进行节点的加载时，el-scrollbar的滚动条不会根据节点的变化进行更新，导致无法滚拖动滚动条进行滚动。
+- 问题：
+   1. 当el-tree的节点采用懒加载的方式进行节点的加载时，el-scrollbar的滚动条不会根据节点的变化进行更新，导致无法滚拖动滚动条进行滚动。
+   2. 当x轴溢出的时候，横向滚动条却没有出现。
 - 解决问题的过程：
    - 问题1：
       1. 找到el-scrollbar更新的方式：使用el-scrollbar中的update方法对scrollbar进行更新。
@@ -26,6 +28,13 @@
                 observer.observe(targetNode, config);
             ```
             - 结果：成功，撒花*★,°*:.☆(￣▽￣)/$:*.°★* 。
+   - 问题2：由于之前的在同一样式表中将横向滚动的样式设置为了none，所以导致横向滚动条无法展示，将其样式注释掉即可。
+      ```
+         🌰：
+          // .is-horizontal {
+          //   display: none;
+          // }
+      ```
             
 ### 参考
 - [MutationObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver)
