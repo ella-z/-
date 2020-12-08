@@ -6,5 +6,7 @@
    - 第一次尝试:在allowDrop中,执行懒加载的函数loadNode,loadNode需要两个参数(Node,resolve), Node为allowDrop的第二个参数dropNode的值,resolve为第一层节点load的时候的值.
       - 结果:加载的值直接拼接到第一层中了,因为resolve是第一层节点的resolve.
    - 第二次尝试:在allowDrop中,对目标dropNode节点进行懒加载,进行数据的申请,然后将结果用append拼接到dropNode节点中,然后再将拖拽的节点赋值到目标节点中.
+      - 结果:拖拽到懒加载文件夹成功,但是其他在allowDrop中的判断失效,因为需要异步对数据进行申请,所以需要将allowDrop设置为async,那么返回的数据,变成Promise.无法获取其中的数据,所以el-tree会将这些return都视为true,那么其他判断都失效了.
+   - 第三次尝试:在allowDrop中先将文件赋值到目标节点.然后在node-drag-end中对数据进行申请,再将申请得到的数据append到目标节点中.
       - 结果:成功~
 
