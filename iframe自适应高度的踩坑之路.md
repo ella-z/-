@@ -3,10 +3,12 @@
 - 解题思路：
    - 第一次尝试:
       - 想法：在父iframe中获取子页面的高度，然后再将子页面的高度赋值给iframe，使得iframe能完整地展示子页面无需滚动。
+      
       ```
-       const iframe = this.$refs.iframe;
-       iframe.style.height = this.$refs.iframe.contentWindow.document.body.scrollHeight + "px";
+          const iframe = this.$refs.iframe;
+          iframe.style.height = this.$refs.iframe.contentWindow.document.body.scrollHeight + "px";
       ```
+      
       - 结果：失败，因为子页面中有个异步请求，所以iframe初步渲染的时候只获取了子页面的还未返回数据的高度。
    - 第二次尝试：
       - 想法：在子页面中异步获取数据之后，计算子页面的高度，然后将子页面的高度赋值给父iframe，让父iframe能完整展示子页面无需滚动。
