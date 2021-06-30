@@ -41,6 +41,7 @@
 
 #### 参考
 - [support changing package.json](https://github.com/ds300/patch-package/issues/250)
+- [如何优雅的修改node_modules中的依赖库](https://zhuanlan.zhihu.com/p/85574731)
 
 
       
