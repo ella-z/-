@@ -38,6 +38,10 @@
       ```
          npx patch-package XXX --exclude
       ```
+#### 问题集
+1. 源文件没有改变问题 
+   - 使用npx生成补丁后，重新卸载了第三方工具包，再安装，发现源文件并没有被改变。
+   - 解决方法：手动删除node_modules，并重新安装即可。
 
 #### 参考
 - [support changing package.json](https://github.com/ds300/patch-package/issues/250)
